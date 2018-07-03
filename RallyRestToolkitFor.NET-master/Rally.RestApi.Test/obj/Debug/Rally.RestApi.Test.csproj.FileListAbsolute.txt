@@ -1,0 +1,9 @@
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.Test\bin\Debug\Rally.RestApi.Test.dll.config
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.Test\bin\Debug\Rally.RestApi.Test.dll
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.Test\bin\Debug\Rally.RestApi.Test.pdb
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.Test\bin\Debug\Rally.RestApi.dll
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.Test\bin\Debug\Rally.RestApi.pdb
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.Test\bin\Debug\Rally.RestApi.xml
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.Test\obj\Debug\Rally.RestApi.Test.csprojResolveAssemblyReference.cache
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.Test\obj\Debug\Rally.RestApi.Test.dll
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.Test\obj\Debug\Rally.RestApi.Test.pdb

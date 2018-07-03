@@ -1,0 +1,817 @@
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.5864174):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: 6cb574a5-1123-4c8e-a4eb-4d422d2460b9
+
+
+Cookies Before:
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.2862057):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: 6cb574a5-1123-4c8e-a4eb-4d422d2460b9
+
+
+Cookies Before:
+Name = __cfduid
+Value = d4df0d035930a1309f68ac2faed872a721484853212
+Domain = .rallydev.com
+
+Name = JSESSIONID
+Value = qs-app-09vqp1d75ap8c619fh460gxx1i6.qs-app-09
+Domain = rally1.rallydev.com
+
+Name = SERVERID
+Value = d1145e12fd0c7b756c0efcf60d1c39d33c9b6f58
+Domain = rally1.rallydev.com
+
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.2641932):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: 6cb574a5-1123-4c8e-a4eb-4d422d2460b9
+
+
+Cookies Before:
+Name = __cfduid
+Value = d4df0d035930a1309f68ac2faed872a721484853212
+Domain = .rallydev.com
+
+Name = JSESSIONID
+Value = qs-app-09vqp1d75ap8c619fh460gxx1i6.qs-app-09
+Domain = rally1.rallydev.com
+
+Name = SERVERID
+Value = d1145e12fd0c7b756c0efcf60d1c39d33c9b6f58
+Domain = rally1.rallydev.com
+
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.5440248):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: a112fa19-0517-4f42-bad8-e4d079592308
+
+
+Cookies Before:
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.2639382):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: a112fa19-0517-4f42-bad8-e4d079592308
+
+
+Cookies Before:
+Name = __cfduid
+Value = d0cfed8d71d7806848b0f210998ac81fa1484853259
+Domain = .rallydev.com
+
+Name = JSESSIONID
+Value = qs-app-0917q6bqfyuzyuptxu7nhdzbxci.qs-app-09
+Domain = rally1.rallydev.com
+
+Name = SERVERID
+Value = d1145e12fd0c7b756c0efcf60d1c39d33c9b6f58
+Domain = rally1.rallydev.com
+
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.2525396):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: a112fa19-0517-4f42-bad8-e4d079592308
+
+
+Cookies Before:
+Name = __cfduid
+Value = d0cfed8d71d7806848b0f210998ac81fa1484853259
+Domain = .rallydev.com
+
+Name = JSESSIONID
+Value = qs-app-0917q6bqfyuzyuptxu7nhdzbxci.qs-app-09
+Domain = rally1.rallydev.com
+
+Name = SERVERID
+Value = d1145e12fd0c7b756c0efcf60d1c39d33c9b6f58
+Domain = rally1.rallydev.com
+
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.6588622):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: 0cfb3e1f-a131-47b8-961b-f89874586955
+
+
+Cookies Before:
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.3970423):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: 0cfb3e1f-a131-47b8-961b-f89874586955
+
+
+Cookies Before:
+Name = __cfduid
+Value = d8c7090a94cc92451f9e5782d5627996a1484853310
+Domain = .rallydev.com
+
+Name = JSESSIONID
+Value = qs-app-141v8llwf9in1zohus0tdudpov7.qs-app-14
+Domain = rally1.rallydev.com
+
+Name = SERVERID
+Value = 1e41e5f7d2721de1762ce00f79c25c6103b215bc
+Domain = rally1.rallydev.com
+
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.3465950):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: 0cfb3e1f-a131-47b8-961b-f89874586955
+
+
+Cookies Before:
+Name = __cfduid
+Value = d8c7090a94cc92451f9e5782d5627996a1484853310
+Domain = .rallydev.com
+
+Name = JSESSIONID
+Value = qs-app-141v8llwf9in1zohus0tdudpov7.qs-app-14
+Domain = rally1.rallydev.com
+
+Name = SERVERID
+Value = 1e41e5f7d2721de1762ce00f79c25c6103b215bc
+Domain = rally1.rallydev.com
+
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.6532717):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: 8615da8e-017a-41c4-aeb7-32926a90a4d4
+
+
+Cookies Before:
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.4801146):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: 8615da8e-017a-41c4-aeb7-32926a90a4d4
+
+
+Cookies Before:
+Name = __cfduid
+Value = d6f24f6fa478eebba2796d5f0e4544ee51484853326
+Domain = .rallydev.com
+
+Name = JSESSIONID
+Value = qs-app-091r6l7z83m70lz1mjbt8eu6unvn.qs-app-09
+Domain = rally1.rallydev.com
+
+Name = SERVERID
+Value = d1145e12fd0c7b756c0efcf60d1c39d33c9b6f58
+Domain = rally1.rallydev.com
+
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.3814390):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: 8615da8e-017a-41c4-aeb7-32926a90a4d4
+
+
+Cookies Before:
+Name = __cfduid
+Value = d6f24f6fa478eebba2796d5f0e4544ee51484853326
+Domain = .rallydev.com
+
+Name = JSESSIONID
+Value = qs-app-091r6l7z83m70lz1mjbt8eu6unvn.qs-app-09
+Domain = rally1.rallydev.com
+
+Name = SERVERID
+Value = d1145e12fd0c7b756c0efcf60d1c39d33c9b6f58
+Domain = rally1.rallydev.com
+
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.3925803):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: 5306dc0b-5482-4811-8962-abe51772d28f
+
+
+Cookies Before:
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.3573754):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: 5306dc0b-5482-4811-8962-abe51772d28f
+
+
+Cookies Before:
+Name = __cfduid
+Value = d35ecbc81f0937e0d745de8368a810e381484853336
+Domain = .rallydev.com
+
+Name = JSESSIONID
+Value = qs-app-17t6ni9jz4xdoa1lp18xrec5hfi.qs-app-17
+Domain = rally1.rallydev.com
+
+Name = SERVERID
+Value = 17e043b0107f91615a63e1d281e085471953d03c
+Domain = rally1.rallydev.com
+
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.4122728):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: 5306dc0b-5482-4811-8962-abe51772d28f
+
+
+Cookies Before:
+Name = __cfduid
+Value = d35ecbc81f0937e0d745de8368a810e381484853336
+Domain = .rallydev.com
+
+Name = JSESSIONID
+Value = qs-app-17t6ni9jz4xdoa1lp18xrec5hfi.qs-app-17
+Domain = rally1.rallydev.com
+
+Name = SERVERID
+Value = 17e043b0107f91615a63e1d281e085471953d03c
+Domain = rally1.rallydev.com
+
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.3762689):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: 764f50cb-b38d-4a78-a96a-e8c97f077a44
+
+
+Cookies Before:
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.4061130):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: 764f50cb-b38d-4a78-a96a-e8c97f077a44
+
+
+Cookies Before:
+Name = __cfduid
+Value = d81107a6b34c79c237d8e20d606d277401484853366
+Domain = .rallydev.com
+
+Name = JSESSIONID
+Value = qs-app-061316pt05hkhs5sjc1dtl2fibg.qs-app-06
+Domain = rally1.rallydev.com
+
+Name = SERVERID
+Value = 8c368ddb55178734f2169d06c80667180b9ad692
+Domain = rally1.rallydev.com
+
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.3865342):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: 764f50cb-b38d-4a78-a96a-e8c97f077a44
+
+
+Cookies Before:
+Name = __cfduid
+Value = d81107a6b34c79c237d8e20d606d277401484853366
+Domain = .rallydev.com
+
+Name = JSESSIONID
+Value = qs-app-061316pt05hkhs5sjc1dtl2fibg.qs-app-06
+Domain = rally1.rallydev.com
+
+Name = SERVERID
+Value = 8c368ddb55178734f2169d06c80667180b9ad692
+Domain = rally1.rallydev.com
+
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.3849903):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: f7ccfe1a-fd36-4f08-9b73-d08c0bd87336
+
+
+Cookies Before:
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.3745719):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: f7ccfe1a-fd36-4f08-9b73-d08c0bd87336
+
+
+Cookies Before:
+Name = __cfduid
+Value = d18a2bc619753d92c8b1708cc30bca5f31484853379
+Domain = .rallydev.com
+
+Name = JSESSIONID
+Value = qs-app-071h9kl3iavcfwy16lo1kgqvy3x3.qs-app-07
+Domain = rally1.rallydev.com
+
+Name = SERVERID
+Value = c1acc7f401011b9881d1497a9ef30b27acc4a1c9
+Domain = rally1.rallydev.com
+
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.7281734):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: f7ccfe1a-fd36-4f08-9b73-d08c0bd87336
+
+
+Cookies Before:
+Name = __cfduid
+Value = d18a2bc619753d92c8b1708cc30bca5f31484853379
+Domain = .rallydev.com
+
+Name = JSESSIONID
+Value = qs-app-071h9kl3iavcfwy16lo1kgqvy3x3.qs-app-07
+Domain = rally1.rallydev.com
+
+Name = SERVERID
+Value = c1acc7f401011b9881d1497a9ef30b27acc4a1c9
+Domain = rally1.rallydev.com
+
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.3321642):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: a2e07708-cfef-4458-b876-fb94b553de59
+
+
+Cookies Before:
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.4189398):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: a2e07708-cfef-4458-b876-fb94b553de59
+
+
+Cookies Before:
+Name = __cfduid
+Value = d4d66eeb853be3821e647c3441d39729f1484853392
+Domain = .rallydev.com
+
+Name = JSESSIONID
+Value = qs-app-121nbwrmf6f2pm92bjw9dh4kp5i.qs-app-12
+Domain = rally1.rallydev.com
+
+Name = SERVERID
+Value = 30fdfbee44de21f5db6d859d510a8e2d0dff6220
+Domain = rally1.rallydev.com
+
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.3316767):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: a2e07708-cfef-4458-b876-fb94b553de59
+
+
+Cookies Before:
+Name = __cfduid
+Value = d4d66eeb853be3821e647c3441d39729f1484853392
+Domain = .rallydev.com
+
+Name = JSESSIONID
+Value = qs-app-121nbwrmf6f2pm92bjw9dh4kp5i.qs-app-12
+Domain = rally1.rallydev.com
+
+Name = SERVERID
+Value = 30fdfbee44de21f5db6d859d510a8e2d0dff6220
+Domain = rally1.rallydev.com
+
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.3617987):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: dca07b41-6bf0-48b7-b9b9-fb4afd0f3f60
+
+
+Cookies Before:
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.3280784):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: dca07b41-6bf0-48b7-b9b9-fb4afd0f3f60
+
+
+Cookies Before:
+Name = __cfduid
+Value = d3437506604add9a625d70393e52ad9691484853411
+Domain = .rallydev.com
+
+Name = JSESSIONID
+Value = qs-app-011ov8trpktak0sk2ymtqio67zc.qs-app-01
+Domain = rally1.rallydev.com
+
+Name = SERVERID
+Value = e0833b3595974942c2e7730f94e0b700cdb77178
+Domain = rally1.rallydev.com
+
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:00.3343740):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: dca07b41-6bf0-48b7-b9b9-fb4afd0f3f60
+
+
+Cookies Before:
+Name = __cfduid
+Value = d3437506604add9a625d70393e52ad9691484853411
+Domain = .rallydev.com
+
+Name = JSESSIONID
+Value = qs-app-011ov8trpktak0sk2ymtqio67zc.qs-app-01
+Domain = rally1.rallydev.com
+
+Name = SERVERID
+Value = e0833b3595974942c2e7730f94e0b700cdb77178
+Domain = rally1.rallydev.com
+
+
+Response Headers:
+
+Cookies After:
+
+Response Data
+<No response>
+
+
+Test.Rally.RestApi.UiSample.vshost.exe Information: 0 : GET (00:00:01.6462165):
+https://rally1.rallydev.com/slm/webservice/v2.0/user.js?fetch=UserName
+Request Headers:
+X-RallyIntegrationLibrary: CA Agile Central Rest API for .NET v3.2.1.0
+X-RallyIntegrationVendor: CA Technologies
+X-RallyIntegrationName: CA Agile Central Rest API for .NET
+X-RallyIntegrationVersion: 3.2.1.0
+X-Trace-Id: 3658ebbd-1b3f-411c-ab52-8fd0a2b902c3
+
+
+Cookies Before:
+
+Response Headers:
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+X-XSS-Protection: 1; mode=block
+RallyRequestID: qs-app-031axt9axmn8d851cbse2jck8tad.qs-app-031266215
+Content-Length: 275
+Content-Type: application/json;  charset=utf-8
+Date: Thu, 26 Jan 2017 18:55:00 GMT
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+ETag: "0d9542106b2fbc513dc24ff46136cc5e5"
+Set-Cookie: ZSESSIONID=sokzFEh3QmmySd7QGr6e1sjTDPkTLENrn6QEBv4XLrk;Path=/;Domain=rally1.rallydev.com;Secure;HttpOnly,JSESSIONID=qs-app-031axt9axmn8d851cbse2jck8tad.qs-app-03;Path=/;Secure;HttpOnly,SUBBUCKETID=4;Path=/;Domain=rally1.rallydev.com;Secure;HttpOnly,SUBSCRIPTIONID=3004;Path=/;Domain=rally1.rallydev.com;Secure;HttpOnly
+Vary: Accept-Encoding
+Content-Encoding: 
+P3P: CP="NON DSP COR CURa PSAa PSDa OUR NOR BUS PUR COM NAV STA"
+Cache-Control: private,max-age=0,must-revalidate
+Server: cloudflare-nginx
+CF-RAY: 32762d374df946f2-EWR
+
+
+Cookies After:
+Name = __cfduid
+Value = d25b38a12e091783febd31dff9bd406fd1485456899
+Domain = .rallydev.com
+
+Name = JSESSIONID
+Value = qs-app-031axt9axmn8d851cbse2jck8tad.qs-app-03
+Domain = rally1.rallydev.com
+
+Name = SERVERID
+Value = aee565818abdfbf69b2f20ed2a89ffd8a28ea9f1
+Domain = rally1.rallydev.com
+
+Name = ZSESSIONID
+Value = sokzFEh3QmmySd7QGr6e1sjTDPkTLENrn6QEBv4XLrk
+Domain = rally1.rallydev.com
+
+Name = SUBBUCKETID
+Value = 4
+Domain = rally1.rallydev.com
+
+Name = SUBSCRIPTIONID
+Value = 3004
+Domain = rally1.rallydev.com
+
+
+Response Data
+{"User": {"_rallyAPIMajor": "2", "_rallyAPIMinor": "0", "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/user/11435156473", "_refObjectUUID": "15350260-99cf-42dc-b832-bd7e6badb833", "_objectVersion": "2019", "_refObjectName": "Art Li", "UserName": "art.li@ansys.com", "Errors": [], "Warnings": ["It is no longer necessary to append \".js\" to WSAPI resources."]}}
+
+

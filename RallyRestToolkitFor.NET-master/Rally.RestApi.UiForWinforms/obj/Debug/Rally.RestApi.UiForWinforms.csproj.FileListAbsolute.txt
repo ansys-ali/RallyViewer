@@ -1,0 +1,13 @@
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.UiForWinforms\bin\Debug\Rally.RestApi.UiForWinforms.dll.config
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.UiForWinforms\bin\Debug\Rally.RestApi.UiForWinforms.XML
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.UiForWinforms\bin\Debug\Rally.RestApi.UiForWinforms.dll
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.UiForWinforms\bin\Debug\Rally.RestApi.UiForWinforms.pdb
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.UiForWinforms\bin\Debug\Rally.RestApi.dll
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.UiForWinforms\bin\Debug\Rally.RestApi.pdb
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.UiForWinforms\bin\Debug\Rally.RestApi.xml
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.UiForWinforms\obj\Debug\Rally.RestApi.UiForWinforms.csprojResolveAssemblyReference.cache
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.UiForWinforms\obj\Debug\Rally.RestApi.UiForWinforms.LoginWindow.resources
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.UiForWinforms\obj\Debug\Rally.RestApi.UiForWinforms.SsoWindow.resources
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.UiForWinforms\obj\Debug\Rally.RestApi.UiForWinforms.csproj.GenerateResource.Cache
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.UiForWinforms\obj\Debug\Rally.RestApi.UiForWinforms.dll
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi.UiForWinforms\obj\Debug\Rally.RestApi.UiForWinforms.pdb

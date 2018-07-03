@@ -1,0 +1,35 @@
+C:\sandbox\ganttchart-1_3_0_3-src\GanttChart\bin\Debug\GanttChart.dll
+C:\sandbox\ganttchart-1_3_0_3-src\GanttChart\bin\Debug\GanttChart.pdb
+C:\sandbox\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\GanttChart.csprojResolveAssemblyReference.cache
+C:\sandbox\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\Braincase.GanttChart.GDIExtention.resources
+C:\sandbox\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\GanttChart.csproj.GenerateResource.Cache
+C:\sandbox\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\GanttChart.dll
+C:\sandbox\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\GanttChart.pdb
+C:\Users\ali\Google Drive\Personal\Work\sandbox\ganttchart-1_3_0_3-src\GanttChart\bin\Debug\GanttChart.dll
+C:\Users\ali\Google Drive\Personal\Work\sandbox\ganttchart-1_3_0_3-src\GanttChart\bin\Debug\GanttChart.pdb
+C:\Users\ali\Google Drive\Personal\Work\sandbox\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\Braincase.GanttChart.GDIExtention.resources
+C:\Users\ali\Google Drive\Personal\Work\sandbox\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\GanttChart.csproj.GenerateResource.Cache
+C:\Users\ali\Google Drive\Personal\Work\sandbox\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\GanttChart.dll
+C:\Users\ali\Google Drive\Personal\Work\sandbox\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\GanttChart.pdb
+C:\Users\ali\Google Drive\Personal\Work\sandbox\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\GanttChart.csprojResolveAssemblyReference.cache
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChart\bin\Debug\GanttChart.dll
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChart\bin\Debug\GanttChart.pdb
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\GanttChart.csprojResolveAssemblyReference.cache
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\Braincase.GanttChart.GDIExtention.resources
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\GanttChart.csproj.GenerateResource.Cache
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\GanttChart.dll
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\GanttChart.pdb
+C:\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChart\bin\Debug\GanttChart.dll
+C:\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChart\bin\Debug\GanttChart.pdb
+C:\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\GanttChart.csprojResolveAssemblyReference.cache
+C:\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\Braincase.GanttChart.GDIExtention.resources
+C:\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\GanttChart.csproj.GenerateResource.Cache
+C:\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\GanttChart.dll
+C:\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\GanttChart.pdb
+C:\AnsysDev\RallyViewer\ganttchart-1_3_0_3-src\GanttChart\bin\Debug\GanttChart.dll
+C:\AnsysDev\RallyViewer\ganttchart-1_3_0_3-src\GanttChart\bin\Debug\GanttChart.pdb
+C:\AnsysDev\RallyViewer\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\GanttChart.csprojResolveAssemblyReference.cache
+C:\AnsysDev\RallyViewer\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\Braincase.GanttChart.GDIExtention.resources
+C:\AnsysDev\RallyViewer\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\GanttChart.csproj.GenerateResource.Cache
+C:\AnsysDev\RallyViewer\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\GanttChart.dll
+C:\AnsysDev\RallyViewer\ganttchart-1_3_0_3-src\GanttChart\obj\Debug\GanttChart.pdb

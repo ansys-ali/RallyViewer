@@ -1,0 +1,41 @@
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\Rally.RestApi.dll.config
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\Rally.RestApi.xml
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\Rally.RestApi.dll
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\Rally.RestApi.pdb
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi\obj\Debug\Rally.RestApi.csprojResolveAssemblyReference.cache
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi\obj\Debug\Rally.RestApi.dll
+C:\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi\obj\Debug\Rally.RestApi.pdb
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\Rally.RestApi.dll.config
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\Rally.RestApi.xml
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\Rally.RestApi.dll
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\Rally.RestApi.pdb
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi\obj\Debug\Rally.RestApi.csprojResolveAssemblyReference.cache
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi\obj\Debug\Rally.RestApi.dll
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyRestToolkitFor.NET-master\Rally.RestApi\obj\Debug\Rally.RestApi.pdb
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\Rally.RestApi.dll.config
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\Rally.RestApi.xml
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\Rally.RestApi.dll
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\Rally.RestApi.pdb
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\System.Web.Http.dll
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\System.Web.Http.WebHost.dll
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\System.Web.Http.xml
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\System.Web.Http.WebHost.xml
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\Microsoft.Web.Infrastructure.xml
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\obj\Debug\Rally.RestApi.csprojResolveAssemblyReference.cache
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\obj\Debug\Rally.RestApi.dll
+C:\Users\ali\Google Drive\Personal\Work\sandbox\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\obj\Debug\Rally.RestApi.pdb
+C:\AnsysDev\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\Rally.RestApi.dll.config
+C:\AnsysDev\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\Rally.RestApi.xml
+C:\AnsysDev\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\Rally.RestApi.dll
+C:\AnsysDev\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\Rally.RestApi.pdb
+C:\AnsysDev\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\AnsysDev\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\System.Net.Http.Formatting.xml
+C:\AnsysDev\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\System.Web.Http.xml
+C:\AnsysDev\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\System.Web.Http.WebHost.xml
+C:\AnsysDev\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\bin\Debug\Microsoft.Web.Infrastructure.xml
+C:\AnsysDev\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\obj\Debug\Rally.RestApi.csprojResolveAssemblyReference.cache
+C:\AnsysDev\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\obj\Debug\Rally.RestApi.dll
+C:\AnsysDev\RallyViewer\RallyRestToolkitFor.NET-master\Rally.RestApi\obj\Debug\Rally.RestApi.pdb

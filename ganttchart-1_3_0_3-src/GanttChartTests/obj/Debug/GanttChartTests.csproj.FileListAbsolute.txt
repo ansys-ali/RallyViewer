@@ -1,0 +1,8 @@
+C:\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChartTests\bin\Debug\GanttChartTests.dll
+C:\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChartTests\bin\Debug\GanttChartTests.pdb
+C:\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChartTests\bin\Debug\GanttChart.dll
+C:\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChartTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChartTests\bin\Debug\GanttChart.pdb
+C:\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChartTests\obj\Debug\GanttChartTests.csprojResolveAssemblyReference.cache
+C:\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChartTests\obj\Debug\GanttChartTests.dll
+C:\sandbox\RallyViewer\ganttchart-1_3_0_3-src\GanttChartTests\obj\Debug\GanttChartTests.pdb

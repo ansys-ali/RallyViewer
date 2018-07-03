@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rally.RestApi.UiForWinforms</name>
+    </assembly>
+    <members>
+        <member name="M:Rally.RestApi.UiForWinforms.LoginWindow.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Rally.RestApi.UiForWinforms.LoginWindow.SetFields">
+            <summary>
+            Updates the fields to show what is in the API.
+            </summary>
+        </member>
+        <member name="M:Rally.RestApi.UiForWinforms.LoginWindow.UpdateLoginState">
+            <summary>
+            Updates the login state to show the correct buttons and field visibility.
+            </summary>
+        </member>
+        <member name="F:Rally.RestApi.UiForWinforms.LoginWindow.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Rally.RestApi.UiForWinforms.LoginWindow.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Rally.RestApi.UiForWinforms.LoginWindow.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Rally.RestApi.UiForWinforms.RestApiAuthMgrWinforms">
+            <summary>
+            A Winforms based authentication manager.
+            </summary>
+        </member>
+        <member name="M:Rally.RestApi.UiForWinforms.RestApiAuthMgrWinforms.#ctor(System.String,System.String,Rally.RestApi.Auth.IEncryptionRoutines,System.String,Rally.RestApi.TraceFieldEnum)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="applicationToken">An application token to be used as the file name to store data as. Each 
+            consuming application should use a unique name in order to ensure that the user credentials are not 
+            overwritten by other applications.</param>
+            <param name="encryptionKey">The encryption key, or salt, to be used for any encryption routines. This salt 
+            should be different for each user, and not the same for everyone consuming the same application. Only used 
+            for UI support.</param>
+            <param name="encryptionRoutines">The encryption routines to use for encryption/decryption of data. Only used for UI support.</param>
+            <param name="webServiceVersion">The version of the WSAPI API to use.</param>
+            <param name="traceInfo">Controls diagnostic trace information being logged</param>
+        </member>
+        <member name="M:Rally.RestApi.UiForWinforms.RestApiAuthMgrWinforms.SetLogo(System.Drawing.Image)">
+            <summary>
+            Sets the logo used in the user controls.
+            </summary>
+            <param name="logo">The image to use as a logo.</param>
+            <example>
+            <code language="C#">
+            // ImageResources is a resource file that the logo has been added to.
+            RestApiAuthMgrWpf.SetLogo(ImageResources.Logo);
+            </code>
+            </example>
+        </member>
+        <member name="M:Rally.RestApi.UiForWinforms.RestApiAuthMgrWinforms.ShowUserLoginWindowInternal">
+            <summary>
+            Opens the window that displays the SSO URL to the user.
+            </summary>
+        </member>
+        <member name="M:Rally.RestApi.UiForWinforms.RestApiAuthMgrWinforms.OpenSsoPageInternal(System.Uri)">
+            <summary>
+            Opens the specified SSO URL to the user.
+            </summary>
+            <param name="ssoUrl">The Uri that the user was redirected to in order to perform their SSO authentication.</param>
+        </member>
+        <member name="M:Rally.RestApi.UiForWinforms.RestApiAuthMgrWinforms.ReportSsoResultsToMgr(System.Boolean,System.String,System.String)">
+            <summary>
+            Reports the results of an SSO action.
+            </summary>
+            <param name="success">Was SSO authentication completed successfully?</param>
+            <param name="rallyServer">The server that the ZSessionID is for.</param>
+            <param name="zSessionID">The zSessionID that was returned from Rally.</param>
+        </member>
+        <member name="M:Rally.RestApi.UiForWinforms.RestApiAuthMgrWinforms.NotifyLoginWindowSsoComplete(Rally.RestApi.RallyRestApi.AuthenticationResult,Rally.RestApi.RallyRestApi)">
+            <summary>
+            Notifies the login window that SSO has been completed.
+            </summary>
+            <param name="authenticationResult">The current state of the authentication process. <see cref="T:Rally.RestApi.RallyRestApi.AuthenticationResult"/></param>
+            <param name="api">The API that was authenticated against.</param>
+        </member>
+        <member name="M:Rally.RestApi.UiForWinforms.RestApiAuthMgrWinforms.PerformAuthenticationCheck(System.String@)">
+            <summary>
+            Performs an authentication check against Rally with the specified credentials
+            </summary>
+        </member>
+        <member name="M:Rally.RestApi.UiForWinforms.RestApiAuthMgrWinforms.PerformLogout">
+            <summary>
+            Performs an logout from Rally.
+            </summary>
+        </member>
+        <member name="M:Rally.RestApi.UiForWinforms.SsoWindow.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Rally.RestApi.UiForWinforms.SsoWindow.ShowSsoPage(Rally.RestApi.UiForWinforms.RestApiAuthMgrWinforms,System.Uri)">
+            <summary>
+            Shows the specified SSO URL to the user.
+            </summary>
+        </member>
+        <member name="M:Rally.RestApi.UiForWinforms.SsoWindow.GetUriCookieContainer(System.Uri)">
+            <summary>
+            Gets the URI cookie container.
+            </summary>
+            <param name="uri">The URI.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rally.RestApi.UiForWinforms.SsoWindow.OnClosed(System.EventArgs)">
+            <summary>
+            Override of OnClosed to be able to indicate that the user closed the window prior to completing SSO.
+            </summary>
+        </member>
+        <member name="F:Rally.RestApi.UiForWinforms.SsoWindow.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Rally.RestApi.UiForWinforms.SsoWindow.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Rally.RestApi.UiForWinforms.SsoWindow.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Rally.RestApi.UiForWinforms.SsoWindow.IsSsoAuthorized">
+            <summary>
+            Is SSO authorized?
+            </summary>
+        </member>
+    </members>
+</doc>

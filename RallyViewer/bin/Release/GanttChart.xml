@@ -1,0 +1,1678 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GanttChart</name>
+    </assembly>
+    <members>
+        <member name="T:Braincase.GanttChart.Task">
+            <summary>
+            Passive data class holding schedule information
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.Task.#ctor">
+            <summary>
+            Initialize a new task to hold schedule information
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Task.Name">
+            <summary>
+            Get or set the Name of this Task
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Task.IsCollapsed">
+            <summary>
+            Indicate whether this task is collapsed such that sub tasks are hidden from view. Only groups can be collasped.
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Task.Complete">
+            <summary>
+            Get or set the pecentage complete of this task, expressed in float between 0.0 and 1.0f.
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Task.Start">
+            <summary>
+            Get the start time of this Task relative to the project start
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Task.End">
+            <summary>
+            Get the end time of this Task relative to the project start
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Task.Duration">
+            <summary>
+            Get the duration of this Task
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Task.Slack">
+            <summary>
+            Get the amount of slack (free float)
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.Task.ToString">
+            <summary>
+            Convert this Task to a descriptive string
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Braincase.GanttChart.TimeScale">
+            <summary>
+            Time scale in which the time units represent
+            </summary>
+        </member>
+        <member name="F:Braincase.GanttChart.TimeScale.Day">
+            <summary>
+            Unit time in Days
+            </summary>
+        </member>
+        <member name="F:Braincase.GanttChart.TimeScale.Week">
+            <summary>
+            Unit time in Weeks
+            </summary>
+        </member>
+        <member name="T:Braincase.GanttChart.IProjectManager`2">
+            <summary>
+            ProjectManager interface
+            </summary>
+            <typeparam name="T">Task class type</typeparam>
+            <typeparam name="R">Resource class type</typeparam>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.Add(`0)">
+            <summary>
+            Add task to project manager
+            </summary>
+            <param name="task"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.Delete(`0)">
+            <summary>
+            Delete task from project manager
+            </summary>
+            <param name="task"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.Group(`0,`0)">
+            <summary>
+            Group the member task under the group task. Group task cannot have relations.
+            </summary>
+            <param name="group"></param>
+            <param name="member"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.Ungroup(`0,`0)">
+            <summary>
+            Ungroup member task from group task. If there are no more task under group, group will become a normal task.
+            </summary>
+            <param name="group"></param>
+            <param name="member"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.Split(`0,`0,`0,System.Int32)">
+            <summary>
+            Split the specified task into consecutive parts part1 and part2.
+            </summary>
+            <param name="task">The regular task to split which has duration of at least 2 to make two parts of 1 time unit duration each.</param>
+            <param name="part1">New Task part (1) of the split task, with the start time of the original task and the specified duration value.</param>
+            <param name="part2">New Task part (2) of the split task, starting 1 time unit after part (1) ends and having the remaining of the duration of the origina task.</param>
+            <param name="duration">The duration of part (1) will be set to the specified duration value but will also be adjusted to approperiate value if necessary.</param>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.Split(`0,`0,System.Int32)">
+            <summary>
+            Split the specified part and obtain another part from it.
+            </summary>
+            <param name="part">The task part to split which has duration of at least 2 to make two parts of 1 time unit duration each. Its duration will be set to the specified duration value.</param>
+            <param name="another">New Task part of the original part, starting 1 time unit after it ends and having the remaining of the duration of the original part.</param>
+            <param name="duration">The duration of part (1) will be set to the specified duration value but will also be adjusted to approperiate value if necessary.</param>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.Join(`0,`0)">
+            <summary>
+            Join part1 and part2 in a split task into a single part represented by part1, and part2 will be deleted from the ProjectManager.
+            The resulting part will have a duration total of the two parts. Schedule of other parts will be packed according to direction of join.
+            If the join will result in only one part remaining, the split task will merge instead.
+            </summary>
+            <param name="part1">The part to keep in the ProjectManager after the join completes successfully.</param>
+            <param name="part2">The part to join into part1 and be deleted afterwards from the ProjectManager.</param>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.Merge(`0)">
+            <summary>
+            Merge all the parts of the splitted task back into one task, having duration equal to sum of total duration of individual task parts, and aggregating the resources onto the resulting task.
+            </summary>
+            <param name="split">The split Task to merge</param>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.PartsOf(`0)">
+            <summary>
+            Get the parts of the split task
+            </summary>
+            <param name="split"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.SplitTaskOf(`0)">
+            <summary>
+            Get the split task that the specified part belogs to.
+            </summary>
+            <param name="part"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.IsSplit(`0)">
+            <summary>
+            Get whether the specified task is a split task
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.IsPart(`0)">
+            <summary>
+            Get whether the specified task is a part of a split task
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.Ungroup(`0)">
+            <summary>
+            Ungroup all member task under the specfied group task. The specified group task will become a normal task.
+            </summary>
+            <param name="group"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.Move(`0,System.Int32)">
+            <summary>
+            Move the specified task by offset positions in the task enumeration
+            </summary>
+            <param name="task"></param>
+            <param name="offset"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.Relate(`0,`0)">
+            <summary>
+            Set a relation between the precedent and dependant task
+            </summary>
+            <param name="precedent"></param>
+            <param name="dependant"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.Unrelate(`0,`0)">
+            <summary>
+            Unset the relation between the precedent and dependant task, if any.
+            </summary>
+            <param name="precedent"></param>
+            <param name="dependant"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.Unrelate(`0)">
+            <summary>
+            Remove all dependant task from specified precedent task
+            </summary>
+            <param name="precedent"></param>
+        </member>
+        <member name="P:Braincase.GanttChart.IProjectManager`2.Precedents">
+            <summary>
+            Enumerate through all tasks that is a precedent, having dependants.
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.IProjectManager`2.Tasks">
+            <summary>
+            Enumerate through all the tasks in the ProjectManager.
+            If there are no change to groups and no add/delete tasks, the order between consecutive calls is preserved.
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.SetStart(`0,System.Int32)">
+            <summary>
+            Set the start time of the specified task.
+            </summary>
+            <param name="task"></param>
+            <param name="start">Number of timescale units after ProjectManager.Start</param>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.SetEnd(`0,System.Int32)">
+            <summary>
+            Set the end time of the specified task. Duration is automatically adjusted to satisfy.
+            </summary>
+            <param name="task"></param>
+            <param name="end">Number of timescale units after ProjectManager.Start</param>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.SetDuration(`0,System.Int32)">
+            <summary>
+            Set the duration of the specified task from start to end.
+            </summary>
+            <param name="task"></param>
+            <param name="duration">Number of timescale units between ProjectManager.Start</param>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.SetComplete(`0,System.Single)">
+            <summary>
+            Set the percentage complete of the specified task from 0.0f to 1.0f.
+            No effect on group tasks as they will get the aggregated percentage complete of all child tasks
+            </summary>
+            <param name="task"></param>
+            <param name="complete"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.SetCollapse(`0,System.Boolean)">
+            <summary>
+            Set whether to collapse the specified group task. No effect on regular tasks.
+            </summary>
+            <param name="group"></param>
+            <param name="collasped"></param>
+        </member>
+        <member name="P:Braincase.GanttChart.IProjectManager`2.Now">
+            <summary>
+            Set the "now" time. Its value is the number of timescale units after the start time.
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.IProjectManager`2.Start">
+            <summary>
+            Set the start date of the project.
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.IndexOf(`0)">
+            <summary>
+            Get the zero-based index of the specified task
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.AncestorsOf(`0)">
+            <summary>
+            Enumerate through parent group and grandparent groups of the specified task
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.DecendantsOf(`0)">
+            <summary>
+            Enumerate through all the children and grandchildren of the specified group
+            </summary>
+            <param name="group"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.ChildrenOf(`0)">
+            <summary>
+            Enumerate through all the direct children of the specified group
+            </summary>
+            <param name="group"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.PrecedentsOf(`0)">
+            <summary>
+            Enumerate through all the direct precedents and indirect precedents of the specified task
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.DependantsOf(`0)">
+            <summary>
+            Enumerate through all the direct dependants and indirect dependants of the specified task
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.DirectPrecedentsOf(`0)">
+            <summary>
+            Enumerate through all the direct precedents of the specified task
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.DirectDependantsOf(`0)">
+            <summary>
+            Enumerate through all the direct dependants of the specified task
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Braincase.GanttChart.IProjectManager`2.CriticalPaths">
+            <summary>
+            Enumerate through all the critical paths. Each path is an enumerable of tasks, starting from the final task of each path.
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.ParentOf(`0)">
+            <summary>
+            Get the parent group of the specified task
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.IsGroup(`0)">
+            <summary>
+            Get whether the specified task is a group
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.IsMember(`0)">
+            <summary>
+            Get whether the specified task is a member
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.HasRelations(`0)">
+            <summary>
+            Get whether the specified task has relations, either has dependants or has precedents connecting to it.
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.Assign(`0,`1)">
+            <summary>
+            Assign the specified resource to the specified task
+            </summary>
+            <param name="task"></param>
+            <param name="resource"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.Unassign(`0,`1)">
+            <summary>
+            Unassign the specified resource from the specfied task
+            </summary>
+            <param name="task"></param>
+            <param name="resource"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.Unassign(`0)">
+            <summary>
+            Unassign all resources from the specified task
+            </summary>
+            <param name="task"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.Unassign(`1)">
+            <summary>
+            Unassign the specified resource from all tasks that has this resource assigned
+            </summary>
+            <param name="resource"></param>
+        </member>
+        <member name="P:Braincase.GanttChart.IProjectManager`2.Resources">
+            <summary>
+            Enumerate through all the resources that has been assigned to some task.
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.ResourcesOf(`0)">
+            <summary>
+            Enumerate through all the resources that has been assigned to the specified task.
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.IProjectManager`2.TasksOf(`1)">
+            <summary>
+            Enumerate through all the tasks that has the specified resource assigned to it.
+            </summary>
+            <param name="resource"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Braincase.GanttChart.ProjectManager">
+            <summary>
+            Wrapper ProjectManager class
+            </summary>
+        </member>
+        <member name="T:Braincase.GanttChart.ProjectManager`2">
+            <summary>
+            Concrete ProjectManager class for the IProjectManager interface
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="R"></typeparam>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.#ctor">
+            <summary>
+            Create a new Project
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.ProjectManager`2.Now">
+            <summary>
+            Get or set the period we are at now
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.ProjectManager`2.Start">
+            <summary>
+            Get or set the starting date for this project
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.ProjectManager`2.TimeScale">
+            <summary>
+            Get or set the time scale on this project. Each period on the task represents one unit of TimeScale.
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.GetDateTime(System.Int32)">
+            <summary>
+            Get the date after the specified period based on TimeScale
+            </summary>
+            <param name="period"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.Add(`0)">
+            <summary>
+            Create a new T for this Project and add it to the T tree
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.Delete(`0)">
+            <summary>
+            Remove task from this Project
+            </summary>
+            <param name="task"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.Group(`0,`0)">
+            <summary>
+            Add the member T to the group T
+            </summary>
+            <param name="group"></param>
+            <param name="member"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.Ungroup(`0,`0)">
+            <summary>
+            Remove the member task from its group
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.Ungroup(`0)">
+            <summary>
+            Ungroup all member task under the specfied group task. The specified group task will become a normal task.
+            </summary>
+            <param name="group"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.IndexOf(`0)">
+            <summary>
+            Get the zero-based index of the task in this Project
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.Move(`0,System.Int32)">
+            <summary>
+            Re-position the task by offset amount of places
+            </summary>
+            <param name="task"></param>
+            <param name="offset"></param>
+        </member>
+        <member name="P:Braincase.GanttChart.ProjectManager`2.Tasks">
+            <summary>
+            Get the T tree
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.AncestorsOf(`0)">
+            <summary>
+            Enumerate through all the children and grandchildren of the specified group
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.DecendantsOf(`0)">
+            <summary>
+            Enumerate through all the children and grandchildren of the specified group
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.ChildrenOf(`0)">
+            <summary>
+            Enumerate through all the direct children of the specified group
+            </summary>
+            <param name="group"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.PrecedentsOf(`0)">
+            <summary>
+            Enumerate through all the direct precedents and indirect precedents of the specified task
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.DependantsOf(`0)">
+            <summary>
+            Enumerate through all the direct dependants and indirect dependants of the specified task
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.DirectPrecedentsOf(`0)">
+            <summary>
+            Enumerate through all the direct precedents of the specified task
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.DirectDependantsOf(`0)">
+            <summary>
+            Enumerate through all the direct dependants of the specified task
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Braincase.GanttChart.ProjectManager`2.Precedents">
+            <summary>
+            Enumerate through all tasks that is a precedent, having dependants.
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.ProjectManager`2.CriticalPaths">
+            <summary>
+            Enumerate list of critical paths in Project
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.ParentOf(`0)">
+            <summary>
+            Get the parent group of the specified task
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.IsGroup(`0)">
+            <summary>
+            Get whether the specified task is a group
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.IsMember(`0)">
+            <summary>
+            Get whether the specified task is a member
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.HasRelations(`0)">
+            <summary>
+            Get whether the specified task has relations, either has dependants or has precedents connecting to it.
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.Relate(`0,`0)">
+            <summary>
+            Set a relation between the precedent and dependant task
+            </summary>
+            <param name="precedent"></param>
+            <param name="dependant"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.Unrelate(`0,`0)">
+            <summary>
+            Unset the relation between the precedent and dependant task, if any.
+            </summary>
+            <param name="precedent"></param>
+            <param name="dependant"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.Unrelate(`0)">
+            <summary>
+            Remove all dependant task from specified precedent task
+            </summary>
+            <param name="precedent"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.Assign(`0,`1)">
+            <summary>
+            Assign the specified resource to the specified task
+            </summary>
+            <param name="task"></param>
+            <param name="resource"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.Unassign(`0,`1)">
+            <summary>
+            Unassign the specified resource from the specfied task
+            </summary>
+            <param name="task"></param>
+            <param name="resource"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.Unassign(`0)">
+            <summary>
+            Unassign the all resources from the specfied task
+            </summary>
+            <param name="task"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.Unassign(`1)">
+            <summary>
+            Unassign the specified resource from all tasks that has this resource assigned
+            </summary>
+            <param name="resource"></param>
+        </member>
+        <member name="P:Braincase.GanttChart.ProjectManager`2.Resources">
+            <summary>
+            Enumerate through all the resources that has been assigned to some task.
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.ResourcesOf(`0)">
+            <summary>
+            Enumerate through all the resources that has been assigned to the specified task.
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.TasksOf(`1)">
+            <summary>
+            Enumerate through all the tasks that has the specified resource assigned to it.
+            </summary>
+            <param name="resource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.SetStart(`0,System.Int32)">
+            <summary>
+            Set the start value. Affects group start/end and dependants start time.
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.SetEnd(`0,System.Int32)">
+            <summary>
+            Set the end time. Affects group end and dependants start time.
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.SetDuration(`0,System.Int32)">
+            <summary>
+            Set the duration of the specified task from start to end.
+            </summary>
+            <param name="task"></param>
+            <param name="duration">Number of timescale units between ProjectManager.Start</param>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.SetComplete(`0,System.Single)">
+            <summary>
+            Set the percentage complete of the specified task from 0.0f to 1.0f.
+            No effect on group tasks as they will get the aggregated percentage complete of all child tasks
+            </summary>
+            <param name="task"></param>
+            <param name="complete"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.SetCollapse(`0,System.Boolean)">
+            <summary>
+            Set whether to collapse the specified group task. No effect on regular tasks.
+            </summary>
+            <param name="task"></param>
+            <param name="collasped"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.Split(`0,`0,`0,System.Int32)">
+            <summary>
+            Split the specified task into consecutive parts part1 and part2.
+            </summary>
+            <param name="task">The regular task to split which has duration of at least 2 to make two parts of 1 time unit duration each.</param>
+            <param name="part1">New Task part (1) of the split task, with the start time of the original task and the specified duration value.</param>
+            <param name="part2">New Task part (2) of the split task, starting 1 time unit after part (1) ends and having the remaining of the duration of the origina task.</param>
+            <param name="duration">The duration of part (1) will be set to the specified duration value but will also be adjusted to approperiate value if necessary.</param>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.Split(`0,`0,System.Int32)">
+            <summary>
+            Split the specified part and obtain another part from it.
+            </summary>
+            <param name="part">The task part to split which has duration of at least 2 to make two parts of 1 time unit duration each. Its duration will be set to the specified duration value.</param>
+            <param name="other">New Task part of the original part, starting 1 time unit after it ends and having the remaining of the duration of the original part.</param>
+            <param name="duration">The duration of part (1) will be set to the specified duration value but will also be adjusted to approperiate value if necessary.</param>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.Join(`0,`0)">
+            <summary>
+            Join part1 and part2 in a split task into a single part represented by part1, and part2 will be deleted from the ProjectManager.
+            The resulting part will have a duration total of the two parts.
+            Part1 and part2 must be actual parts and must be consecutive parts in the split task.
+            If the join results in only one part remaining, the all parts will be deleted and the split task will promote to a regular task
+            Schedule of other parts will not be affected.
+            TODO: Join option: EarlyStartLateEnd, EarlyStartEarlyEnd, LateStartLateEnd
+            </summary>
+            <param name="part1">The part to keep in the ProjectManager after the join completes successfully.</param>
+            <param name="part2">The part to join into part1 and be deleted afterwards from the ProjectManager.</param>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.Merge(`0)">
+            <summary>
+            Merge all the parts of the splitted task back into one task, having duration equal to sum of total duration of individual task parts, and aggregating the resources onto the resulting task.
+            </summary>
+            <param name="split">The split Task to merge</param>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.PartsOf(`0)">
+            <summary>
+            Get the parts of the split task
+            </summary>
+            <param name="split"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.SplitTaskOf(`0)">
+            <summary>
+            Get the split task that the specified part belogs to.
+            </summary>
+            <param name="part"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.IsSplit(`0)">
+            <summary>
+            Get whether the specified task is a split task
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2.IsPart(`0)">
+            <summary>
+            Get whether the specified task is a part of a split task
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.ProjectManager`2._LeaveParent(`0)">
+            <summary>
+            Leave the parent group if task is a member, but remain registered in ProjectManager
+            </summary>
+            <param name="task"></param>
+        </member>
+        <member name="T:Braincase.GanttChart.Chart">
+            <summary>
+            Gantt Chart control
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.#ctor">
+            <summary>
+            Construct a gantt chart
+            </summary>
+        </member>
+        <member name="F:Braincase.GanttChart.Chart.CreateTaskDelegate">
+            <summary>
+            Delegate method for creating a new Task. Creates Task by default.
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Chart.SelectedTasks">
+            <summary>
+            Get the selected tasks
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Chart.SelectedTask">
+            <summary>
+            Get the latest selected task
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Chart.HeaderOneHeight">
+            <summary>
+            Get or set header1 pixel height
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Chart.FullDateStringFormat">
+            <summary>
+            Get or set the DateTime string format. Default value is D/M/YYYY
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Chart.HeaderTwoHeight">
+            <summary>
+            Get or set header2 pixel height
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Chart.BarSpacing">
+            <summary>
+            Get or set pixel distance from top of each Task to the next
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Chart.BarHeight">
+            <summary>
+            Get or set pixel height of each Task
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Chart.BarWidth">
+            <summary>
+            Get or set pixel width of each unit of period
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Chart.TaskFormat">
+            <summary>
+            Get or set format for Tasks
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Chart.CriticalTaskFormat">
+            <summary>
+            Get or set format for critical Tasks
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Chart.HeaderFormat">
+            <summary>
+            Get or set format for headers
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Chart.RelationFormat">
+            <summary>
+            Get or set format for relations
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Chart.AllowTaskDragDrop">
+            <summary>
+            Get or set whether dragging of Tasks is allowed. Set to false when not dragging to skip drag(drop) tracking.
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Chart.ShowRelations">
+            <summary>
+            Get or set whether to show relations
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Chart.ShowTaskLabels">
+            <summary>
+            Get or set whether to show task labels
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Chart.AccumulateRelationsOnGroup">
+            <summary>
+            Get or set whether to accumulate relations on group tasks and show relations even when group is collapsed. (Not working well; still improving on it)
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Chart.ShowSlack">
+            <summary>
+            Get or set whether to show slack
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.Chart.TimeScaleDisplay">
+            <summary>
+            Get or set the time scale display format
+            </summary>
+        </member>
+        <member name="E:Braincase.GanttChart.Chart.TaskMouseOver">
+            <summary>
+            Occurs when the mouse is moving over a Task
+            </summary>
+        </member>
+        <member name="E:Braincase.GanttChart.Chart.TaskMouseOut">
+            <summary>
+            Occurs when the mouse leaves a Task
+            </summary>
+        </member>
+        <member name="E:Braincase.GanttChart.Chart.TaskMouseClick">
+            <summary>
+            Occurs when a Task is clicked
+            </summary>
+        </member>
+        <member name="E:Braincase.GanttChart.Chart.TaskMouseDoubleClick">
+            <summary>
+            Occurs when a Task is double clicked by the mouse
+            </summary>
+        </member>
+        <member name="E:Braincase.GanttChart.Chart.TaskMouseDrag">
+            <summary>
+            Occurs when a Task is being dragged by the mouse
+            </summary>
+        </member>
+        <member name="E:Braincase.GanttChart.Chart.TaskMouseDrop">
+            <summary>
+            Occurs when a dragged Task is being dropped by releasing any previously pressed mouse button.
+            </summary>
+        </member>
+        <member name="E:Braincase.GanttChart.Chart.TaskSelected">
+            <summary>
+            Occurs when a task is selected.
+            </summary>
+        </member>
+        <member name="E:Braincase.GanttChart.Chart.TaskDeselecting">
+            <summary>
+            Occurs before one or more tasks are being deselected. All Task in Chart.SelectedTasks will be deselected.
+            </summary>
+        </member>
+        <member name="E:Braincase.GanttChart.Chart.PaintTask">
+            <summary>
+            Occurs before a Task gets painted
+            </summary>
+        </member>
+        <member name="E:Braincase.GanttChart.Chart.PaintOverlay">
+            <summary>
+            Occurs before overlays get painted
+            </summary>
+        </member>
+        <member name="E:Braincase.GanttChart.Chart.PaintHeader">
+            <summary>
+            Occurs before the header gets painted
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.TryGetRow(Braincase.GanttChart.Task,System.Int32@)">
+            <summary>
+            Get the line number of the specified task
+            </summary>
+            <param name="task"></param>
+            <param name="row"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.TryGetTask(System.Int32,Braincase.GanttChart.Task@)">
+            <summary>
+            Get the task at the specified line number
+            </summary>
+            <param name="row"></param>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.Init(Braincase.GanttChart.ProjectManager{Braincase.GanttChart.Task,System.Object})">
+            <summary>
+            Initialize this Chart with a Project
+            </summary>
+            <param name="project"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.Print(System.Drawing.Printing.PrintDocument,System.Single)">
+            <summary>
+            Print the Chart to the specified PrintDocument.
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.Print(System.Single)">
+            <summary>
+            Print the Chart to the specified Image
+            </summary>
+            <param name="scale">Scale to print the image at.</param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.GetChartInfo(System.Drawing.Point)">
+            <summary>
+            Get information about the chart area at the mouse coordinate of the chart
+            </summary>
+            <param name="mouse"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.SetToolTip(Braincase.GanttChart.Task,System.String)">
+            <summary>
+            Set tool tip for the specified task
+            </summary>
+            <param name="task"></param>
+            <param name="text"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.GetToolTip(Braincase.GanttChart.Task)">
+            <summary>
+            Get tool tip currently set for the specified task
+            </summary>
+            <param name="task"></param>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.ClearToolTip(Braincase.GanttChart.Task)">
+            <summary>
+            Clear tool tip for the specified task
+            </summary>
+            <param name="task"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.ClearToolTips">
+            <summary>
+            Clear all tool tips
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.ScrollTo(System.DateTime)">
+            <summary>
+            Scroll to the specified DateTime
+            </summary>
+            <param name="datetime"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.ScrollTo(Braincase.GanttChart.Task)">
+            <summary>
+            Scroll to the specified task
+            </summary>
+            <param name="task"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.BeginBillboardMode(System.Drawing.Graphics)">
+            <summary>
+            Begin billboard mode. Graphics must orginate from Chart and be same as that used in EndBillboardMode.
+            </summary>
+            <param name="graphics"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.EndBillboardMode(System.Drawing.Graphics)">
+            <summary>
+            End billboard mode. Graphics must orginate from Chart and be same as that used in BeginBillboardMode.
+            </summary>
+            <param name="graphics"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Raises the System.Windows.Forms.Control.Paint event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the System.Windows.Forms.Control.MouseMove event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.OnMouseClick(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the System.Windows.Forms.Control.MouseClick event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the System.Windows.Forms.Control.MouseDown event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the System.Windows.Forms.Control.MouseUp event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.OnMouseDoubleClick(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the System.Windows.Forms.Control.MouseDoubleClick event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.OnTaskMouseOver(Braincase.GanttChart.TaskMouseEventArgs)">
+            <summary>
+            Raises the TaskMouseOver event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.OnTaskMouseOut(Braincase.GanttChart.TaskMouseEventArgs)">
+            <summary>
+            Raises the TaskMouseOver event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.OnTaskMouseDrag(Braincase.GanttChart.TaskDragDropEventArgs)">
+            <summary>
+            Raises the TaskMouseDrag( event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.OnTaskMouseDrop(Braincase.GanttChart.TaskDragDropEventArgs)">
+            <summary>
+            Raises the TaskMouseDrop event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.OnTaskMouseClick(Braincase.GanttChart.TaskMouseEventArgs)">
+            <summary>
+            Raises the TaskMouseClick event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.OnTaskMouseDoubleClick(Braincase.GanttChart.TaskMouseEventArgs)">
+            <summary>
+            Raises the TaskMouseDoubleClick event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.OnTaskSelected(Braincase.GanttChart.TaskMouseEventArgs)">
+            <summary>
+            Raises the TaskSelected event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.OnTaskDeselecting(Braincase.GanttChart.TaskMouseEventArgs)">
+            <summary>
+            Raises the TaskDeselecting event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.OnPaintOverlay(Braincase.GanttChart.ChartPaintEventArgs)">
+            <summary>
+            Raises the PaintOverlay event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart._DeviceCoordToChartRow(System.Single)">
+            <summary>
+            Convert view Y coordinate to zero based row number
+            </summary>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart._ChartCoordToChartRow(System.Single)">
+            <summary>
+            Convert world Y coordinate to zero-based row number
+            </summary>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart._ChartRowToChartCoord(System.Int32)">
+            <summary>
+            Convert zero based row number to client Y coordinates
+            </summary>
+            <param name="row"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart._GenerateModels">
+            <summary>
+            Generate the task models and resize the world accordingly
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart._GenerateHeaders">
+            <summary>
+            Generate Header rectangles and dates
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.__CalculateViewportStart">
+            <summary>
+            Calculate the date in the first visible column in the viewport
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.__NextColumn(System.DateTime@)">
+            <summary>
+            Integrates the current DateTime by one column of TimeScale
+            </summary>
+            <param name="current"></param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart._Draw(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            Draw the Chart using the specified graphics
+            </summary>
+        </member>
+        <member name="F:Braincase.GanttChart.Chart.ShortDays">
+            <summary>
+            Printing labels for header
+            </summary>
+        </member>
+        <member name="F:Braincase.GanttChart.Chart._Marker">
+            <summary>
+            Polygon points for Header markers
+            </summary>
+        </member>
+        <member name="F:Braincase.GanttChart.Chart.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Braincase.GanttChart.Chart.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Braincase.GanttChart.TimeScaleDisplay">
+            <summary>
+            Time scale display format
+            </summary>
+        </member>
+        <member name="F:Braincase.GanttChart.TimeScaleDisplay.DayOfWeek">
+            <summary>
+            Day of the week: S, M, T, W, T, F, S
+            </summary>
+        </member>
+        <member name="F:Braincase.GanttChart.TimeScaleDisplay.DayOfMonth">
+            <summary>
+            Day of month; 1 to 31
+            </summary>
+        </member>
+        <member name="F:Braincase.GanttChart.TimeScaleDisplay.WeekOfYear">
+            <summary>
+            Week of the year: 1 to 52; or 53 in case of leap year
+            </summary>
+        </member>
+        <member name="T:Braincase.GanttChart.TaskFormat">
+            <summary>
+            Format for painting tasks
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.TaskFormat.Border">
+            <summary>
+            Get or set Task outline color
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.TaskFormat.BackFill">
+            <summary>
+            Get or set Task background color
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.TaskFormat.ForeFill">
+            <summary>
+            Get or set Task foreground color
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.TaskFormat.Color">
+            <summary>
+            Get or set Task font color
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.TaskFormat.SlackFill">
+            <summary>
+            Get or set the brush for slack bars
+            </summary>
+        </member>
+        <member name="T:Braincase.GanttChart.RelationFormat">
+            <summary>
+            Format for painting relations
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.RelationFormat.Line">
+            <summary>
+            Get or set the line pen
+            </summary>
+        </member>
+        <member name="T:Braincase.GanttChart.HeaderFormat">
+            <summary>
+            Format for painting chart header
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.HeaderFormat.Color">
+            <summary>
+            Font color
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.HeaderFormat.Border">
+            <summary>
+            Border and line colors
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.HeaderFormat.GradientLight">
+            <summary>
+            Get or set the lighter color in the gradient
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.HeaderFormat.GradientDark">
+            <summary>
+            Get or set the darker color in the gradient
+            </summary>
+        </member>
+        <member name="T:Braincase.GanttChart.TaskMouseEventArgs">
+            <summary>
+            Provides data for TaskMouseEvent
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.TaskMouseEventArgs.Task">
+            <summary>
+            Subject Task of the event
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.TaskMouseEventArgs.Rectangle">
+            <summary>
+            Rectangle bounds of the Task
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.TaskMouseEventArgs.#ctor(Braincase.GanttChart.Task,System.Drawing.RectangleF,System.Windows.Forms.MouseButtons,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initialize a new instance of TaskMouseEventArgs with the MouseEventArgs parameters and the Task involved.
+            </summary>
+        </member>
+        <member name="T:Braincase.GanttChart.TaskDragDropEventArgs">
+            <summary>
+            Provides data for TaskDragDropEvent
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.TaskDragDropEventArgs.PreviousLocation">
+            <summary>
+            Get the previous mouse location
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.TaskDragDropEventArgs.StartLocation">
+            <summary>
+            Get the starting mouse location of this drag drop event
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.TaskDragDropEventArgs.Source">
+            <summary>
+            Get the source task that is being dragged
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.TaskDragDropEventArgs.Target">
+            <summary>
+            Get the target task that is being dropped on
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.TaskDragDropEventArgs.SourceRect">
+            <summary>
+            Get the rectangle bounds of the source task in chart coordinates
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.TaskDragDropEventArgs.TargetRect">
+            <summary>
+            Get the rectangle bounds of the target task in chart coordinates
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.TaskDragDropEventArgs.Row">
+            <summary>
+            Get the chart row number that the mouse is current at.
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.TaskDragDropEventArgs.#ctor(System.Drawing.Point,System.Drawing.Point,Braincase.GanttChart.Task,System.Drawing.RectangleF,Braincase.GanttChart.Task,System.Drawing.RectangleF,System.Int32,System.Windows.Forms.MouseButtons,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initialize a new instance of TaskDragDropEventArgs with the MouseEventArgs parameters and the Task involved and the previous mouse location.
+            </summary>
+        </member>
+        <member name="T:Braincase.GanttChart.ChartPaintEventArgs">
+            <summary>
+            Provides data for ChartPaintEvent
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.ChartPaintEventArgs.Chart">
+            <summary>
+            Get the chart that for this event
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.ChartPaintEventArgs.#ctor(System.Drawing.Graphics,System.Drawing.Rectangle,Braincase.GanttChart.Chart)">
+            <summary>
+            Initialize a new instance of ChartPaintEventArgs with the PaintEventArgs graphics and clip rectangle, and the chart itself.
+            </summary>
+            <param name="graphics"></param>
+            <param name="clipRect"></param>
+            <param name="chart"></param>
+        </member>
+        <member name="T:Braincase.GanttChart.HeaderPaintEventArgs">
+            <summary>
+            Provides data for ChartPaintEvent
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.HeaderPaintEventArgs.Font">
+            <summary>
+            Get or set the font to use for drawing the text on the header
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.HeaderPaintEventArgs.Format">
+            <summary>
+            Get or set the header formatting
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.HeaderPaintEventArgs.#ctor(System.Drawing.Graphics,System.Drawing.Rectangle,Braincase.GanttChart.Chart,System.Drawing.Font,Braincase.GanttChart.HeaderFormat)">
+            <summary>
+            Initialize a new instance of HeaderPaintEventArgs with the editable default font and header format
+            </summary>
+        </member>
+        <member name="T:Braincase.GanttChart.TaskPaintEventArgs">
+            <summary>
+            Provides data for TaskPaintEvent
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.TaskPaintEventArgs.Task">
+            <summary>
+            Get the task to be painted
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.TaskPaintEventArgs.Rectangle">
+            <summary>
+            Get the rectangle bounds of the task
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.TaskPaintEventArgs.Row">
+            <summary>
+            Get the row number of the task
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.TaskPaintEventArgs.Font">
+            <summary>
+            Get or set the font to be used to draw the task label
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.TaskPaintEventArgs.Format">
+            <summary>
+            Get or set the formatting of the task
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.TaskPaintEventArgs.#ctor(System.Drawing.Graphics,System.Drawing.Rectangle,Braincase.GanttChart.Chart,Braincase.GanttChart.Task,System.Int32,System.Drawing.Font,Braincase.GanttChart.TaskFormat)">
+            <summary>
+            Initialize a new instance of TaskPaintEventArgs with the editable default font and task paint format
+            </summary>
+        </member>
+        <member name="T:Braincase.GanttChart.RelationPaintEventArgs">
+            <summary>
+            Provides data for RelationPaintEvent
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.RelationPaintEventArgs.Precedent">
+            <summary>
+            Get the precedent task in the relation
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.RelationPaintEventArgs.Dependant">
+            <summary>
+            Get the dependant task in the relation
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.RelationPaintEventArgs.Format">
+            <summary>
+            Get or set the formatting to use for drawing the relation
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.RelationPaintEventArgs.#ctor(System.Drawing.Graphics,System.Drawing.Rectangle,Braincase.GanttChart.Chart,Braincase.GanttChart.Task,Braincase.GanttChart.Task,Braincase.GanttChart.RelationFormat)">
+            <summary>
+            Initialize a new instance of RelationPaintEventArgs with the editable default font and relation paint format
+            </summary>
+        </member>
+        <member name="T:Braincase.GanttChart.ChartInfo">
+            <summary>
+            Provides information about the chart at a specific row and date/time.
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.ChartInfo.Row">
+            <summary>
+            Get or set the chart row number
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.ChartInfo.DateTime">
+            <summary>
+            Get or set the chart date/time
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.ChartInfo.Task">
+            <summary>
+            Get or set the task
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.ChartInfo.#ctor(System.Int32,System.DateTime,Braincase.GanttChart.Task)">
+            <summary>
+            Construct a passive data structure to hold chart information
+            </summary>
+            <param name="row"></param>
+            <param name="dateTime"></param>
+            <param name="task"></param>
+        </member>
+        <member name="T:Braincase.GanttChart.IViewport">
+            <summary>
+            IViewport moves in world coordinate and projects models to device coordinate space
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.IViewport.Projection">
+            <summary>
+            Get the projection matrix to transform world coordinates to device coordinates
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.IViewport.Rectangle">
+            <summary>
+            Get the rectangle boundary in world coordinates to be captured and projected onto viewport
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.IViewport.Resize">
+            <summary>
+            Request viewport to recalculate its get properties.
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.IViewport.DeviceToWorldCoord(System.Drawing.Point)">
+            <summary>
+            Convert device coordinates to world coordinates
+            </summary>
+            <param name="screencoord"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.IViewport.DeviceToWorldCoord(System.Drawing.PointF)">
+            <summary>
+            Convert device coordinates to world coordinates
+            </summary>
+            <param name="screencoord"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.IViewport.WorldToDeviceCoord(System.Drawing.PointF)">
+            <summary>
+            Convert world coordinates to device coordinates
+            </summary>
+            <param name="worldcoord"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Braincase.GanttChart.IViewport.WorldHeight">
+            <summary>
+            Get or set the world height
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.IViewport.WorldWidth">
+            <summary>
+            Get or set the world width
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.IViewport.X">
+            <summary>
+            Get or set the X world-coordinate of the position of the viewport.
+            This is also the same as the IViewport.Rectangle.Left.
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.IViewport.Y">
+            <summary>
+            Get or set the Y world-coordinate of the position of the viewport.
+            This is also the same as the IViewport.Rectangle.Top.
+            </summary>
+        </member>
+        <member name="T:Braincase.GanttChart.PrintViewport">
+            <summary>
+            IViewport for printing to file
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.PrintViewport.X">
+            <summary>
+            Get or set viewport X world coordinate
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.PrintViewport.Y">
+            <summary>
+            Get or set viewport Y world coordinate
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.PrintViewport.Scale">
+            <summary>
+            Get or set scaling factor between 0.0f and 1.0f (obviously, scale of zero would mean you can't see anything)
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.PrintViewport.WorldWidth">
+            <summary>
+            Get or set width of the world
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.PrintViewport.WorldHeight">
+            <summary>
+            Get or set height of the world
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.PrintViewport.Projection">
+            <summary>
+            Get the projection matrix for transforming models into viewport
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.PrintViewport.Rectangle">
+            <summary>
+            Get the rectangle bounds of the viewport in world coordinate
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.PrintViewport.Resize">
+            <summary>
+            Resize the viewport, recalculating and correcting dimensions
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.PrintViewport.DeviceToWorldCoord(System.Drawing.Point)">
+            <summary>
+            Convert view coordinates to world coordinate
+            </summary>
+            <param name="screencoord"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.PrintViewport.DeviceToWorldCoord(System.Drawing.PointF)">
+            <summary>
+            Convert view coordinates to world coordinate
+            </summary>
+            <param name="screencoord"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.PrintViewport.WorldToDeviceCoord(System.Drawing.PointF)">
+            <summary>
+            Convert world coordinates to view coordinate
+            </summary>
+            <param name="worldcoord"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Braincase.GanttChart.ControlViewport">
+            <summary>
+            An IViewport that is placed over a world coordinate system and provides methods to transform between world and view coordinates
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.ControlViewport.#ctor(System.Windows.Forms.Control)">
+            <summary>
+            Construct a Viewport
+            </summary>
+            <param name="view"></param>
+        </member>
+        <member name="F:Braincase.GanttChart.ControlViewport.Identity">
+            <summary>
+            Identity Matrix
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.ControlViewport.WheelDelta">
+            <summary>
+            Get or set the number of pixels to scroll on each click of the mouse
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.ControlViewport.Rectangle">
+            <summary>
+            Get the Rectangle area in world coordinates where the Viewport is currently viewing over
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.ControlViewport.Projection">
+            <summary>
+            Get the projection transformation matrix required for drawing models in the world projected into view
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.ControlViewport.Resize">
+            <summary>
+            Resize the Viewport according to the view control and world dimensions, which ever larger and add scrollbars where approperiate
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.ControlViewport.DeviceToWorldCoord(System.Drawing.Point)">
+            <summary>
+            Convert view coordinates to world coordinates
+            </summary>
+            <param name="screencoord"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.ControlViewport.DeviceToWorldCoord(System.Drawing.PointF)">
+            <summary>
+            Convert view coordinates to world coordinates
+            </summary>
+            <param name="screencoord"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Braincase.GanttChart.ControlViewport.WorldToDeviceCoord(System.Drawing.PointF)">
+            <summary>
+            Convert world coordinates to view coordinates
+            </summary>
+            <param name="worldcoord"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Braincase.GanttChart.ControlViewport.WorldWidth">
+            <summary>
+            Get or set the world width
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.ControlViewport.WorldHeight">
+            <summary>
+            Get or set the world height
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.ControlViewport.X">
+            <summary>
+            Get or set the world X coordinate of the Viewport location, represented by the top left corner of the Viewport Rectangle
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.ControlViewport.Y">
+            <summary>
+            Get or set the wordl Y coordinate of the Viewport location, represented by the top left corner of the Viewport Rectangle
+            </summary>
+        </member>
+        <member name="T:Braincase.GanttChart.ImageViewport">
+            <summary>
+            IViewport for printing to image. The full chart in the world is printed as-is.
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.ImageViewport.Projection">
+            <summary>
+            Get the projection matrix to transform world coordinates to device coordinates
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.ImageViewport.Rectangle">
+            <summary>
+            The device rectangle boundary in the world to capture and project onto device is the same rectangle of the world for ImageViewport
+            So that the entire world is projected onto the ImageViewport
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.ImageViewport.DeviceToWorldCoord(System.Drawing.Point)">
+            <summary>
+            The device and world coordinates are the same for ImageViewport
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.ImageViewport.DeviceToWorldCoord(System.Drawing.PointF)">
+            <summary>
+            The device and world coordinates are the same for ImageViewport
+            </summary>
+        </member>
+        <member name="M:Braincase.GanttChart.ImageViewport.WorldToDeviceCoord(System.Drawing.PointF)">
+            <summary>
+            The device and world coordinates are the same for ImageViewport
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.ImageViewport.WorldHeight">
+            <summary>
+            Get or set the world height
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.ImageViewport.WorldWidth">
+            <summary>
+            Get or set the world width
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.ImageViewport.X">
+            <summary>
+            No effect for ImageViewport. X and Y world-coordinate offset is always at (0,0).
+            </summary>
+        </member>
+        <member name="P:Braincase.GanttChart.ImageViewport.Y">
+            <summary>
+            No effect for ImageViewport. X and Y world-coordinate offset is always at (0,0).
+            </summary>
+        </member>
+    </members>
+</doc>
