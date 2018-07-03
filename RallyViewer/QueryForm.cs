@@ -119,7 +119,7 @@ namespace RallyViewer
 
             // this will populate tasks
             List<string> storyIDs = Story.GetObjectIDs(Story.GetLeafs(_data.Stories.Values, projectName));
-            _data.Tasks = Rally.QueryTasks(storyIDs, Query.Operator.Equals, "WorkProduct.ObjectUUID", textBoxRelease.Text);
+            _data.Tasks = Rally.QueryTasks(storyIDs, Query.Operator.Equals, "WorkProduct.ObjectUUID", string.Empty);
 
             progressBar.Value = 90;
 
@@ -164,7 +164,7 @@ namespace RallyViewer
             progressBar.Value = 60;
 
             List<string> storyIDs = Story.GetObjectIDs(Story.GetLeafs(_data.Stories.Values));
-            _data.Tasks = Rally.QueryTasks(storyIDs, Query.Operator.Equals, "WorkProduct.ObjectUUID", textBoxRelease.Text);
+            _data.Tasks = Rally.QueryTasks(storyIDs, Query.Operator.Equals, "WorkProduct.ObjectUUID", string.Empty);
 
             progressBar.Value = 80;
 
