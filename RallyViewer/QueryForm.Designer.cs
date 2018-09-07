@@ -165,7 +165,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(343, 20);
             this.dateTimePicker1.TabIndex = 12;
-            this.dateTimePicker1.Value = new System.DateTime(2018, 4, 29, 0, 0, 0, 0);
+            this.dateTimePicker1.Value = new System.DateTime(2018, 7, 30, 0, 0, 0, 0);
             // 
             // textBoxPeople
             // 
@@ -254,7 +254,7 @@
             this.textBoxRelease.Name = "textBoxRelease";
             this.textBoxRelease.Size = new System.Drawing.Size(343, 20);
             this.textBoxRelease.TabIndex = 6;
-            this.textBoxRelease.Text = "2018 Planning Increment 2";
+            this.textBoxRelease.Text = "2018 Planning Increment 3";
             // 
             // label3
             // 

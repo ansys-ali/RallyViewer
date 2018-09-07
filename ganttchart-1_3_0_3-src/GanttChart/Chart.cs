@@ -1185,19 +1185,19 @@ namespace Braincase.GanttChart
                 __DrawHeaderOne(graphics, i, e, h2textrect);
             }
 
+            foreach (int divider in _mProject.Dividers)
+            {
+                float xf1 = (divider + 0.5f) * BarWidth;
+                var pen1 = new Pen(Color.MediumSlateBlue);
+                pen1.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+                graphics.DrawLine(pen1, new PointF(xf1, _mViewport.Y), new PointF(xf1, _mViewport.Rectangle.Bottom));
+            }
+
             // draw "Now" line
             float xf = (_mProject.Now + 0.5f) * BarWidth;
             var pen = new Pen(Color.Red);
             pen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             graphics.DrawLine(pen, new PointF(xf, _mViewport.Y), new PointF(xf, _mViewport.Rectangle.Bottom));
-
-            foreach (int divider in _mProject.Dividers)
-            {
-                xf = (divider + 0.5f) * BarWidth;
-                pen = new Pen(Color.MediumSlateBlue);
-                pen.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-                graphics.DrawLine(pen, new PointF(xf, _mViewport.Y), new PointF(xf, _mViewport.Rectangle.Bottom));
-            }
         }
 
         private void _DrawColumns(Graphics graphics)
